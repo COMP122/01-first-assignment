@@ -181,7 +181,7 @@ For new users of git, the question "How do I know if I successfully submitted my
       ```
       open https://github.com/COMP122/01-first-assignment-{account}
       ```
-      - ensure that there is a green checkmark as indicated in the following image
+      - ensure that there is a green check mark as indicated in the following image
       - ensure that last update is corresponds to when you thought you submitted your assignment
 
       ![Submission Validation](.png/correct_submission.png)
