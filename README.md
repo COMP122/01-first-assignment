@@ -177,6 +177,11 @@ In class, the professor will review each of these steps and provide additional i
 
 For new users of git, the question "How do I know if I successfully submitted my assignment?" is often asked.  Here are several ways to validate that you did submit what you thought you did.
 
+   1. Use the command `git repo-state` (provided by the Prof) to examine state of both the local and remote repo.
+      ```
+      git repo-state
+      ```
+      
    1. open the GitHub Webpage associated with your assignment: <br />
       ```
       open https://github.com/COMP122/01-first-assignment-{account}
