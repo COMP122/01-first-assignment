@@ -1,7 +1,3 @@
-Update the invitation like for the first assignment.
-Add a video for
-git pull before a git push
-
 
 # General Assignment Directions
 
@@ -70,7 +66,7 @@ In class, the professor will review each of these steps and provide additional i
 
 
 ## Joining the comp122-f23 Classroom
-  1. Click on the following assignment link: https://classroom.github.com/a/c1oXvbim
+  1. Click on the following assignment link: https://classroom.github.com/a/3Oe57wgq
   1. Join the comp122-f23 classroom.
      - if your email address is not listed, STOP and notify the Professor.
   1. Accept the assignment.
@@ -84,7 +80,7 @@ In class, the professor will review each of these steps and provide additional i
      cd ~/classes/comp122/deliverables
      ```
   1. Use the Assignment's Invitation URL to accept the assignment.
-     - For this assignment, the URL is: https://classroom.github.com/a/c1oXvbim
+     - For this assignment, the URL is: https://classroom.github.com/a/3Oe57wgq
      - All Invitations URL are recorded in the "assignments.md" file.
 
   1. Click on the URL that is associated with your assignment repository. The URL should be of the form: <br />  https://github.com/COMP122/01-first-assignment-{account}
@@ -135,18 +131,14 @@ In class, the professor will review each of these steps and provide additional i
      git commit -m 'creating file'
      ```
 
-  1. Test to see if you assignment passes the minimal requirements:
+  1. Test to see if you assignment passes the first set of requirements, adding your Name and Account information.
      ```
      make 
      ```
 
-  1. Pull the current contents of your remote repository:
-     ```
-     git pull
-     ```
-
   1. Push the current contents of your local repository to remote repository:
      ```
+     git pull     # get into the habit of doing a git pull first to ensure you are in sync.
      git push
      ```
 
@@ -179,6 +171,8 @@ In class, the professor will review each of these steps and provide additional i
      git push
      ```
 
+     Note that the output of the `make` will provide you a summary of your submission.
+
 ## Validating that you have submitted your file correctly.
 
 For new users of git, the question "How do I know if I successfully submitted my assignment?" is often asked.  Here are several ways to validate that you did submit what you thought you did.
@@ -188,17 +182,25 @@ For new users of git, the question "How do I know if I successfully submitted my
       open https://github.com/COMP122/01-first-assignment-{account}
       ```
       - ensure that there is a green checkmark as indicated in the following image
-      - ensure that last update is recent
+      - ensure that last update is corresponds to when you thought you submitted your assignment
 
-   1.    1. git log -1 --oneline 0917b30 (HEAD -> main, origin/main, origin/HEAD) updating name of action 
+      ![Submission Validation](.png/correct_submission.png)
 
-   1. git fetch  
-      git status -s -b 
-      ## main...origin/main [ahead 1, behind 1]
- M "../TODO for the Fall"
- M ../syllabus.md
-?? ../bin/foobar
+   1. Examine your git log valid your local main and origin/main are on the same commit
+      ```
+      git log -1 --oneline
+      6f4f760 (HEAD -> main, origin/main, origin/HEAD) final
+      ```
 
+   1. Compare the status of the local and remote repositories
+      ```
+      git fetch                    # get a copy of the remote repository
+      git status --short --branch  # Obtain the status
+      ```
+      If you are in sync, then the output should be:
+      ```
+      ## main...origin/main
+      ```
 
 
 

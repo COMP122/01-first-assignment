@@ -1,4 +1,4 @@
-# Assignment Name:  My First Assignment
+# Assignment:  My First Assignment
 ### Name: 
 ### GitHub Account: 
 
