@@ -32,7 +32,7 @@ For more information about the markdown (MD) format see:
    1. Procrastination Studies                                                 <!-- response -->
    <!-- 
         A '1. ' introduces an ordered list.  
-        To add the fourth subject, simple add a line to the list starting with '1. '. 
+        To add the fourth subject, simply add a line to the list starting with '1. '. 
         The Markdown viewer will automatically assigned the appropriate line number. 
         Also note that positioning of all the '1. 's above; they all must begin
         in the same column number. 
