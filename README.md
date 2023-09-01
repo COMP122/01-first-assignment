@@ -119,7 +119,13 @@ In class, the professor will review each of these steps and provide additional i
      - GitHub Account:
 
      You can edit the file using the Sublime Text editor:
-       - `subl submission.md`
+
+     1. You can open the Sublime Text editor via the following command:
+        - `subl submission.md`
+
+     1. If you are on Windows using the Ubuntu Shell, you need to
+        1. Launch Sublime Text by double clicking the SublimeText Icon
+        1. Then open the `submission.md` file by navigating through the menue system
 
   1. Add the submission.md to your local repository: 
      ```
