@@ -13,24 +13,32 @@ ACCOUNT=$(shell awk '/GitHub Account:/ {print $$4}' $(SUBMISSION) )
 COMMITS=$(shell git log --oneline | wc -l)
 MIN_COMMITS=4
 
+# Make targets explained
+# all: the default target used by students to build and check there work
+# validate: the target used by the student to run a validation check for submission
+#   validate_*: individual targets to validate a particular criterion
+# submission: the target used by github to validate a submission
+#   md_submission:  the target used by github to validate an MarkDown (md) submission
+#   code_submission: the target used by git hub to validate a code submission
+# grade: the target used by the prof to perform auto-grading
 
-grade: all  # open the submission.md file to see if renders correctly... don't do this on the server.
+all: submission
+
+grade: all number_commits  # open the submission.md file to see if renders correctly... don't do this on the server.
 	@open submission.md
+	@subl submission.md grade.report
 
-all: md_submission number_commits
+submission: md_submission number_commits
 
-submissions: md_submission
-
+# md_submmission is the make target of github
 md_submission: validate_submission validate_name validate_account # 
 	@echo ---------------------------------
 	@echo The following are your responses:
 	@echo 
-	@sed -n -e '/^#/p' -e '/```/,/```/p' -e "/$(TAG)/s/^$(ANSWER)[\t ]*$(TAG).*/\1/p" $(SUBMISSION)
+	@sed -n -e '/^#/p' -e '/```response/,/```/p' -e "/$(TAG)/s/^$(ANSWER)[\t ]*$(TAG).*/\1/p" $(SUBMISSION)
 
 code_submmision:
 	echo
-
-
 
 
 validate_submission:
