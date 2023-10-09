@@ -14,13 +14,24 @@ COMMITS=$(shell git log --oneline | wc -l)
 MIN_COMMITS=4
 
 
-all: md_submission
+grade: all  # open the submission.md file to see if renders correctly... don't do this on the server.
+	@open submission.md
 
-md_submission: validate_submission validate_name validate_account # number_commits
+all: md_submission number_commits
+
+submissions: md_submission
+
+md_submission: validate_submission validate_name validate_account # 
 	@echo ---------------------------------
 	@echo The following are your responses:
 	@echo 
 	@sed -n -e '/^#/p' -e '/```/,/```/p' -e "/$(TAG)/s/^$(ANSWER)[\t ]*$(TAG).*/\1/p" $(SUBMISSION)
+
+code_submmision:
+	echo
+
+
+
 
 validate_submission:
 	@test -f $(SUBMISSION) || \
@@ -37,6 +48,8 @@ validate_account:
 # the log file only shows the most recent entry -- 
 # not sure why or what the work around is.
 number_commits:
-	test ! $(COMMITS) -lt $(MIN_COMMITS) || \
+	@test ! $(COMMITS) -lt $(MIN_COMMITS) || \
 	  { echo "Not enough commits" && false ; } 
+
+
 
